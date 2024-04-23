@@ -98,7 +98,6 @@ server.post("/signup", (req, res) => {
 
 server.post("/signin", async (req, res) => {
   let { email, password } = req.body;
-  console.log(email)
 
   await User.findOne({ "personal_info.email": email }).then((results) => {
     if (!results) {
